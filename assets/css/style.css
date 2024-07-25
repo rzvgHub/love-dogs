@@ -1,0 +1,19 @@
+                                                  /* Main wild-card selector */
+* {
+    margin-left: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+                                                  /* Header */
+
+header {
+    background-color: rgb(165, 46, 46);
+}
+                                                  /* Main */
+main {
+    background-color: aqua;
+}
+                                                  /* Footer */
+footer {
+    background-color: blue;
+}
