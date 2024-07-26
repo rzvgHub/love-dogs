@@ -67,6 +67,21 @@ ul > li {
 
 }
 
+                                                  /* Nav-bar styles , dropdown menu toggle */
+
+nav {
+
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    left: 0;                                     /* set navbar to the left of the screen */
+    box-shadow: 0 2px 2px #3a3a3a;
+    padding: 0 1rem;
+    display: none;                               /* navbar items are hidden until user click to open them */
+    
+                              
+}
+
                                                   /* Main */
 
 main {
