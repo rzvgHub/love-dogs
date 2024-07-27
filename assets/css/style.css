@@ -1,96 +1,165 @@
-                                                /* Google Fonts */
- @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-                                                /* Main wild-card selector */
-
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
-    margin-left: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-                                                 /* General Styles */
 
+/* General styles */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* Generic project styles */
     color: #3a3a3a;
     font-family: 'Lato', sans-serif;
-}                                               
+}
 
-
-                                                 /* Header */
-
+/* Header */
 header {
     background-color: #ffffff;
-                                                 /* Place header on top of the page */
     padding: 0 1rem;
-    
-    position: fixed;                             /* Make nav-bar scroll along */
+    position: fixed;
     z-index: 99;
     width: 100%;
-    box-shadow: 0 2px 2px #3a3a3a;            /* Give navbar a shadow */
-
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
+
 header a {
     text-decoration: none;
-    color: inherit;                             /* This will remove default blue link color being applyed by the browser */
+    color: inherit;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #424242;
+    color: #252525;
 }
 
 #menu {
-    letter-spacing: 4px;
     font-size: 110%;
+    letter-spacing: 4px;
     list-style-type: none;
 }
 
-ul {
-    list-style-type: none;
-}
-                                                  /*Create vertical space between nav bar list */
-ul > li {
-
+#menu > li {
     margin-bottom: 1em;
 }
 
- 
-
 .active {
-
-    border-bottom: 1px solid #3a3a3a;           /* Underline home page as a visual clue for the user */
-
+    border-bottom: 1px solid #3a3a3a;
 }
 
-                                                  /* Nav-bar styles , dropdown menu toggle */
-
+/* Navbar styles with dropdown toggle */
 nav {
-
     position: absolute;
     background-color: #ffffff;
     width: 100%;
-    left: 0;                                     /* set navbar to the left of the screen */
-    box-shadow: 0 2px 2px #3a3a3a;
+    left: 0;
     padding: 0 1rem;
-    display: none;                               /* navbar items are hidden until user click to open them */
-    
-                              
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: none;
+    top: 100%;
 }
 
-                                                  /* Main */
+/* Nav toggle */
+#nav-toggle:checked~nav {
+    display: block;
+}
 
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+}
+
+/* Main content */
 main {
-    background-color: aqua;
-                                                  /* Make Main Element take any available space in the container */
+    background-color: lightblue;
+    /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
+    margin-top: 47px;
 }
 
-                                                  /* Footer */
-footer {
-    background-color: rgb(36, 192, 171);
+/* Footer */
+#social-networks {
+
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+#social-networks i {
+
+    padding: 5%;
+    color: #3a3a3a;
+    font-size: 200%;
+}
+
+/* Media Query */
+
+/* Tablets and larger */
+
+@media screen and (min-width: 768px) {
+     /* HEADER */
+     nav {
+       display: block;
+       position: relative;
+       box-shadow: none;
+       width: fit-content;
+       padding-right: 1rem;
+
+     }
+
+     #menu {
+
+        display: flex;
+     }
+    
+     #menu > li {
+
+        padding-left: 1rem;
+     }
+
+     .nav-toggle-label {
+
+        display: none;
+     }
+
+     #logo {
+
+        font-size: 280%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+     }
+
+     main {
+        margin-top: 79px;
+     }
+}
+
+@media screen and (min-width:992px) {
+
+
+  /* underline the menu item selected */
+
+        #menu a:hover {
+
+            border-bottom: 1px solid #3a3a3a;
+
+
+        }
+
+
+
 }
