@@ -45,7 +45,7 @@ h1 {
 }
 
 #menu {
-    font-size: 110%;
+    font-size: 150%;
     letter-spacing: 4px;
     list-style-type: none;
     background-color: #065a65;
@@ -57,7 +57,7 @@ h1 {
 }
 
 .active {
-    border-bottom: 1px solid #3a3a3a;
+    border-bottom: 2px solid #9c485c;
 }
 
 /* Navbar styles with dropdown toggle */
