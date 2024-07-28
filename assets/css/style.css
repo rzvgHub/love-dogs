@@ -20,7 +20,7 @@ body {
 
 /* Header */
 header {
-    background-color:#2D2E2E;
+    background-color: #065a65;
     padding: 0 1rem;
     position: fixed;
     z-index: 99;
@@ -28,7 +28,8 @@ header {
     box-shadow: 0 2px 2px #3a3a3a;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    top: 0;
 }
 
 header a {
@@ -40,25 +41,19 @@ h1 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #fafafa;
+    color: #252525;
 }
-
-.nav-toggle-label i {
-    color: white; /* Change icon color to white */
-    font-size: 1em; /* Adjust size if needed */
-    transition: color 0.3s ease; /* Smooth transition */
-  }
 
 #menu {
     font-size: 110%;
     letter-spacing: 4px;
     list-style-type: none;
-    
+    background-color: #065a65;
 }
 
 #menu > li {
     margin-bottom: 1em;
-    color: #fafafa;
+    color: black;
 }
 
 .active {
@@ -68,17 +63,17 @@ h1 {
 /* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
-    background-color: #2D2E2E;
+    background-color: #065a65;
     width: 100%;
     left: 0;
     padding: 0 1rem;
-    box-shadow: 0 2px 2px #2D2E2E;
+    box-shadow: 0 2px 2px #065a65;
     display: none;
     top: 100%;
 }
 
 /* Nav toggle */
-#nav-toggle:checked~nav {
+#nav-toggle:checked ~ nav {
     display: block;
 }
 
@@ -88,94 +83,208 @@ nav {
 
 .nav-toggle-label {
     font-size: 2rem;
+    color: black;
 }
-
-/* Hover Effect */
-#menu li a:hover {
-    color: #716969; /* Hover color */
-  }
-  
-
- 
 
 /* Main content */
 main {
-    background-color: lightblue;
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
+/* Hero section */
+#hero {
+    margin-top: 0;
+    padding-top: 0;
+    height: 100vh;
+    width: 100%;
+    background: url("../images/hero.jpeg") no-repeat center center/cover;
+    position: relative;
+    /* Apply animation to the hero section */
+    animation-name: hero;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; /* Add easing for smoother effect */
+}
+
+/* Creates the level of zoom for hero image */
+@keyframes hero {
+    from {
+        transform: scale(1.1); /* Start at 1.1 scale for zoom out effect */
+    }
+    to {
+        transform: scale(1.0); /* End at normal scale */
+    }
+}
+
 /* Footer */
 #social-networks {
-
     text-align: center;
     padding: 20px 0;
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
+    background-color: #065a65;
 }
+
 #social-networks i {
-
+    font-size: 160%;
     padding: 5%;
-    color: #3a3a3a;
-    font-size: 200%;
+    color: #9c485c;
+    
 }
 
-/* Media Query */
+/* CONTACT PAGE /*
+/* General form styles */
 
-/* Tablets and larger */
+/* Contact page background */
+/* General styles */
+body.contact-page {
+    min-height: 100vh; /* Ensure the page takes the full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: url("../images/hero.jpeg") no-repeat center center/cover;
+    position: relative;
+    padding: 20px;
+    margin: 0; /* Ensure no extra margins affect layout */
+}
 
+
+body.contact-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a dark overlay for contrast */
+    z-index: 1; /* Ensures overlay is beneath the form */
+}
+
+/* Contact form styles */
+/* Contact form styles */
+#contact-form {
+    max-width: 600px;
+    width: 100%; /* Allow the form to adjust to the screen size */
+    padding: 20px;
+    background-color: #065a65; /* Semi-transparent background for readability */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2; /* Ensures the form is above the background */
+    text-align: center; /* Center text inside the form */
+}
+
+#contact-form h2 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: #252525;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #065a65;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #9c485c;
+    box-shadow: 0 0 5px rgba(156, 72, 92, 0.3);
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #9c485c;
+}
+
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
-     /* HEADER */
-     nav {
-       display: block;
-       position: relative;
-       box-shadow: none;
-       width: fit-content;
-       padding-right: 1rem;
+    /* Header */
+    nav {
+        top: 0;
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
 
-     }
-
-     #menu {
-
+    #menu {
         display: flex;
-     }
-    
-     #menu > li {
+    }
 
+    #menu > li {
         padding-left: 1rem;
-     }
+    }
 
-     .nav-toggle-label {
-
+    .nav-toggle-label {
         display: none;
-     }
+    }
 
-     #logo {
-
+    #logo {
         font-size: 280%;
         line-height: 75px;
         margin: 0 0.5rem;
-     }
+    }
 
-     main {
+    /* Main content */
+    main {
+        /* Push main content down to accommodate larger header */
         margin-top: 79px;
-     }
+    }
 }
 
-@media screen and (min-width:992px) {
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover {
+        border-bottom: 1px solid #9c485c;
+    }
+    
+    body.contact-page {
+        /* Optional adjustments for large screens */
+        padding: 40px; /* Add more padding if needed */
+    }
 
-
-  /* underline the menu item selected */
-
-        #menu a:hover {
-
-            border-bottom: 1px solid #3a3a3a;
-
-
-        }
-
+    #contact-form {
+      
+        
+        max-width: 100%; /* Increase the maximum width of the form */
+        display: flex;
+        flex-direction: column;
+    }
 
 
 }
