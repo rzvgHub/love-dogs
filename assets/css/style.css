@@ -291,6 +291,10 @@ button[type="submit"]:hover {
         display: flex;
         flex-direction: column;
     }
+     
+    h1 {
 
+        left: 0;
+    }
 
 }
