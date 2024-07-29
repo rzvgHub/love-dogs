@@ -108,6 +108,62 @@ main {
     animation-timing-function: ease-in-out; /* Add easing for smoother effect */
 }
 
+/* Meetup Times section */
+#times {
+    background: url('../images/neworleans.webp') no-repeat center / cover;
+    display: flex;
+    flex-wrap: wrap;
+}
+#times i {
+    color: yellow;
+}
+
+
+
+#times div {
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 15px;
+    text-align: center;
+    flex-basis: 200px;
+    flex-grow: 1; /* Creates a grid of meetup time divs over the background image */
+    border: 2px solid white;
+
+    /* hoover */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.customer-reviews {
+
+    background-color: hsl(346, 37%, 45%);
+    text-align: center;
+    color:#ffff;
+}
+
+
+#times p {
+
+    font-size: 20px;
+    color:
+}
+
+#times div:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
+    border-color: #080707; /* Change border color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add box shadow on hover */
+}
+
+
+#times h3 {
+    color: #fafafa; /* Override the heading color set in general styles */
+}
+
+.hidden-heading {
+
+    justify-content: center;
+    text-align: center;
+}
+
 /* Creates the level of zoom for hero image */
 @keyframes hero {
     from {
@@ -131,7 +187,7 @@ main {
 #social-networks i {
     font-size: 160%;
     padding: 5%;
-    color: #9c485c;
+    color: hsl(346, 37%, 45%);
     
 }
 
@@ -265,6 +321,25 @@ button[type="submit"]:hover {
 
 
 /* Gallery photos*/
+
+#photo {
+
+    display: flex; /* Enables Flexbox layout */
+    flex-wrap: wrap; /* Allows the items to wrap onto multiple lines */
+    justify-content:flex-start;/* Distributes space between items */
+    gap: 0; /* Adds space between items */
+    padding: 0; /* Adds padding around the gallery */
+}
+
+/* Style for each image */
+#photo img {
+    flex: 1 1 calc(33% - 20px); /* Flex items will grow and shrink as needed, with a base width of roughly one-third of the container width minus gaps */
+    max-width: calc(33% - 20px); /* Ensures images do not exceed one-third of the container width */
+    height: auto; /* Maintains the aspect ratio of images */
+    border-radius: 0; /* Optional: adds rounded corners to images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow effect to images */
+    object-fit: cover; /* Ensures images cover the container without stretching */
+}
 
 .galleryh1 {
 
