@@ -236,6 +236,55 @@ button[type="submit"]:hover {
     background-color: #9c485c;
 }
 
+/* Gallery page styles */
+#gallery {
+    padding: 2rem;
+    background-color: #065a65; /* Replace with your desired color */
+}
+
+
+
+#photos img {
+    width: 100%;
+    line-height: 1em;
+
+   
+
+    /* hoover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#photos {
+    line-height: 0;
+}
+
+#photos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Gallery photos*/
+
+.galleryh2 {
+
+    color: aliceblue;
+    background-color: #065a65;
+    text-align: center;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 576px) {
+    /* set the gallery photos into columns of 2 */
+    #photos {
+        column-count: 2;
+        /* for the space between photos */
+        column-gap: 0;
+    }
+}
+
+
+
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
     /* Header */
