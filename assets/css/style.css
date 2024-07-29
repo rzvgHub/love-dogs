@@ -41,7 +41,7 @@ h1 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #252525;
+    color: #ffff;
 }
 
 #menu {
@@ -53,7 +53,7 @@ h1 {
 
 #menu > li {
     margin-bottom: 1em;
-    color: black;
+    color: #ffff;
 }
 
 .active {
@@ -165,6 +165,12 @@ body.contact-page::before {
 
 /* Contact form styles */
 /* Contact form styles */
+#contact-form-main {
+
+    display: flex;
+    position:fixed
+}
+
 #contact-form {
     max-width: 600px;
     width: 100%; /* Allow the form to adjust to the screen size */
@@ -180,7 +186,7 @@ body.contact-page::before {
 #contact-form h2 {
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    color: #252525;
+    color: #ffff;
     margin-bottom: 20px;
 }
 
