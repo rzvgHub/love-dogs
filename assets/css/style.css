@@ -149,6 +149,8 @@ main {
     background-color: hsl(346, 37%, 45%);
     text-align: center;
     color:#ffff;
+    font-family: 'East Sea Dokdo', sans-serif;
+    font-size: 50px;
 }
 
 
@@ -361,6 +363,13 @@ button[type="submit"]:hover {
     text-align: center;
     padding-bottom: 20px; /* Add padding to the bottom of the heading */
 
+}
+
+/* About Page */
+
+#about-img {
+
+    background: url('../images/maraphoto.jpeg') no-repeat center / cover;
 }
 
 /* MEDIA QUERIES */
